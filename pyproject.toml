@@ -10,8 +10,12 @@ requires-python = ">=3.12"
 dependencies = [
     "ipykernel>=7.4.0",
     "iteround>=1.0.4",
-    "soundcast_landuse_scenario_builder @git+https://github.com/psrc/soundcast_landuse_scenario_builder.git",
+    "psrcelmerpy @git+https://github.com/psrc/psrcelmerpy.git",
+    "soundcast_landuse_scenario_builder",
 ]
+
+[tool.uv.sources]
+soundcast_landuse_scenario_builder = { path = "../soundcast_landuse_scenario_builder", editable = true }
 
 [project.scripts]
 scenario-builder-mazsim = "scenario_builder_mazsim:main"

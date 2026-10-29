@@ -1302,6 +1302,18 @@ wheels = [
 ]
 
 [[package]]
+name = "psrcelmerpy"
+version = "0.1.0"
+source = { git = "https://github.com/psrc/psrcelmerpy.git#443c26ba3197d6abd47066b554d41d4b5c58c901" }
+dependencies = [
+    { name = "geopandas" },
+    { name = "pandas" },
+    { name = "pyodbc" },
+    { name = "shapely" },
+    { name = "sqlalchemy" },
+]
+
+[[package]]
 name = "psutil"
 version = "7.2.2"
 source = { registry = "https://pypi.org/simple" }
@@ -1859,6 +1871,7 @@ source = { editable = "." }
 dependencies = [
     { name = "ipykernel" },
     { name = "iteround" },
+    { name = "psrcelmerpy" },
     { name = "soundcast-landuse-scenario-builder" },
 ]
 
@@ -1866,7 +1879,8 @@ dependencies = [
 requires-dist = [
     { name = "ipykernel", specifier = ">=7.4.0" },
     { name = "iteround", specifier = ">=1.0.4" },
-    { name = "soundcast-landuse-scenario-builder", git = "https://github.com/psrc/soundcast_landuse_scenario_builder.git" },
+    { name = "psrcelmerpy", git = "https://github.com/psrc/psrcelmerpy.git" },
+    { name = "soundcast-landuse-scenario-builder", editable = "../soundcast_landuse_scenario_builder" },
 ]
 
 [[package]]
@@ -2058,12 +2072,13 @@ wheels = [
 [[package]]
 name = "soundcast-landuse-scenario-builder"
 version = "0.0.1"
-source = { git = "https://github.com/psrc/soundcast_landuse_scenario_builder.git#5c73a4f90beeeec72ab4166560ed6e3a2c1c06e2" }
+source = { editable = "../soundcast_landuse_scenario_builder" }
 dependencies = [
     { name = "blosc2" },
     { name = "cvxpy", extra = ["glpk"] },
     { name = "geopandas" },
     { name = "h5py" },
+    { name = "iteround" },
     { name = "networkx" },
     { name = "numba" },
     { name = "numpy" },
@@ -2080,6 +2095,31 @@ dependencies = [
     { name = "sqlalchemy" },
     { name = "tables" },
     { name = "us" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "blosc2", specifier = ">=2.5.1" },
+    { name = "cvxpy", extras = ["glpk"], specifier = ">=1.6.5" },
+    { name = "geopandas", specifier = ">=1.1.2" },
+    { name = "h5py", specifier = ">=3.14.0" },
+    { name = "iteround", specifier = ">=1.0.4" },
+    { name = "networkx", specifier = ">=3.2.1" },
+    { name = "numba", specifier = ">=0.60.0" },
+    { name = "numpy", specifier = ">=1.23.4,<2" },
+    { name = "orca", specifier = ">=1.8" },
+    { name = "ortools", specifier = ">=5.1.4045" },
+    { name = "pandas", specifier = ">=2.2" },
+    { name = "populationsim", specifier = ">=0.10.0" },
+    { name = "psutil", specifier = ">=7.0.0" },
+    { name = "pyarrow", specifier = ">=20.0.0" },
+    { name = "pydantic", specifier = ">=2.12.3" },
+    { name = "pyinstrument", specifier = ">=5.0.1" },
+    { name = "pyodbc", specifier = ">=5.3.0" },
+    { name = "pyyaml", specifier = ">=6.0.2" },
+    { name = "sqlalchemy", specifier = ">=2.0.44" },
+    { name = "tables", specifier = ">=3.9" },
+    { name = "us", specifier = ">=3.2.0" },
 ]
 
 [[package]]
